@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 
-
     <style rel="stylesheet">
 	body {
 	background-color: gray;
@@ -30,6 +29,7 @@
 		</div>
 			<input type="text" id="inputTask" />
 			<input type="button" onclick="addText()" value="Add To list" />
+		<button id=deleteALL> Delete all </button>
    </div>	
 		
     <!-- jQuer -->
@@ -59,7 +59,8 @@
 			removeTask.setAttribute("value", "Remove");
 			removeTask.setAttribute("id", "removeButton");		
 		removeTask.addEventListener('click', function(e) {  
-			p.parentNode.removeChild(p);  //Function for deleting
+		   $("p").fadeOut("slow");
+			//p.parentNode.removeChild(p);  //Function for deleting
 		}, false);
 		p.appendChild(removeTask);
 		
@@ -69,16 +70,19 @@
 			ColorTaskDone.setAttribute("value", "Mark as Done");
 			ColorTaskDone.setAttribute("id", "colorButton");	
 		ColorTaskDone.addEventListener('click', function(t){
-		
-			p.style.backgroundColor = 'red';
-			p.style.width = '100%';
+				p.style.backgroundColor = 'red';
+				p.style.width = '100%';
 		}, false);
 		p.appendChild(ColorTaskDone)
 	
 	}
 	
-
+	//Delete all with jQuery
+	$("#deleteALL").click(function (){		    
+		 $("p").fadeOut("slow");		
+		//console.log("dsadsa");
+	});
+	
     </script>
-
   </body>
 </html>
