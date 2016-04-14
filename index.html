@@ -42,7 +42,14 @@
 		p.appendChild(textnode);
 		document.getElementById('addTask').appendChild(p);
 		
-		
+		var removeTask = document.createElement('input');	
+			removeTask.setAttribute('type', 'button');
+			removeTask.setAttribute("value", "Remove");
+			removeTask.setAttribute("id", "removeButton");		
+		removeTask.addEventListener('click', function(e) {  
+			p.parentNode.removeChild(p);  //Function for deleting
+		}, false);
+		p.appendChild(removeTask);
 	
 	}
 	
