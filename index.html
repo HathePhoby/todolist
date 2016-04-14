@@ -42,6 +42,7 @@
 		p.appendChild(textnode);
 		document.getElementById('addTask').appendChild(p);
 		
+		//Delete button on creation of list
 		var removeTask = document.createElement('input');	
 			removeTask.setAttribute('type', 'button');
 			removeTask.setAttribute("value", "Remove");
@@ -50,6 +51,18 @@
 			p.parentNode.removeChild(p);  //Function for deleting
 		}, false);
 		p.appendChild(removeTask);
+		
+		//Create Color button with function of coloring the 'p'
+		var ColorTaskDone = document.createElement('input');
+			ColorTaskDone.setAttribute('type', 'button');
+			ColorTaskDone.setAttribute("value", "Mark as Done");
+			ColorTaskDone.setAttribute("id", "colorButton");	
+		ColorTaskDone.addEventListener('click', function(t){
+		
+			p.style.backgroundColor = 'red';
+			p.style.width = '100%';
+		}, false);
+		p.appendChild(ColorTaskDone)
 	
 	}
 	
