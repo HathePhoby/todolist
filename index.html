@@ -12,18 +12,25 @@
 
 
     <style rel="stylesheet">
-
+	body {
+	background-color: gray;
+	}
+	
+	.container {
+		width: 50%;
+	}
 	</style>
 
   </head>
   <body>
   
-	<div id="addTask">
-		<b><u> Task's at hand </u></b>
-	</div>
-		<input type="text" id="inputTask" />
-		<input type="button" onclick="addText()" value="Add To list" />
-		
+   <div class="container">
+		<div id="addTask">
+			<b><u> Task's at hand </u></b>
+		</div>
+			<input type="text" id="inputTask" />
+			<input type="button" onclick="addText()" value="Add To list" />
+   </div>	
 		
     <!-- jQuer -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -39,9 +46,13 @@
 					document.createElement("p");
 		var textnode = 
 					document.createTextNode(input);
-		p.appendChild(textnode);
-		document.getElementById('addTask').appendChild(p);
-		
+		if ( input !== ''){			
+			p.appendChild(textnode);
+			document.getElementById('addTask').appendChild(p);
+		} else {
+			alert("A task has to be written");
+		//console.log("dsadsa");
+		}	
 		//Delete button on creation of list
 		var removeTask = document.createElement('input');	
 			removeTask.setAttribute('type', 'button');
